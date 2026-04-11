@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_books.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_list_view.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +7,16 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .3,
-      child: BookListView(),
+    return Column(
+      crossAxisAlignment: .start,
+      children: [
+        SizedBox(
+          height: MediaQuery.sizeOf(context).height * .3,
+          child: BookListView(),
+        ),
+        SizedBox(height: 54),
+        BestSellerBooks(),
+      ],
     );
   }
 }
