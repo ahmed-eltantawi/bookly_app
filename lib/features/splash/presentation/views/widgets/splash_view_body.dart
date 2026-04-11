@@ -1,7 +1,11 @@
+import 'package:bookly_app/core/utils/constants.dart';
+import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bookly_app/core/utils/images_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -17,15 +21,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: Duration(seconds: 1),
-    );
-    _slidingAnimation = Tween<Offset>(
-      begin: Offset(0, 5),
-      end: Offset.zero,
-    ).animate(_animationController);
-    _animationController.forward();
+    initSlidingAnimation();
+    navigationToHomePage();
   }
 
   @override
@@ -48,5 +45,27 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ],
       ),
     );
+  }
+
+  void initSlidingAnimation() {
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    _slidingAnimation = Tween<Offset>(
+      begin: Offset(0, 5),
+      end: Offset.zero,
+    ).animate(_animationController);
+    _animationController.forward();
+  }
+
+  void navigationToHomePage() {
+    Future.delayed(const Duration(seconds: 1), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fade,
+        duration: kTransitionDuration,
+      );
+    });
   }
 }
