@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BookImageWidget extends StatelessWidget {
-  const BookImageWidget({super.key, required this.imageSource});
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({super.key, required this.imageSource});
   final String imageSource;
   @override
   Widget build(BuildContext context) {
