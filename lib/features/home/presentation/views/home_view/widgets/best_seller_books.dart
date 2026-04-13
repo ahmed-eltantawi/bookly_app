@@ -11,11 +11,9 @@ class BestSellerBooks extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 26),
         child: Column(
+          crossAxisAlignment: .start,
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text("Best Seller", style: Styles.montserratSemibold),
-            ),
+            Text("Best Seller", style: Styles.montserratSemibold),
             SizedBox(height: 16),
             Expanded(child: SizedBox(child: BestSellerBooksListView())),
           ],

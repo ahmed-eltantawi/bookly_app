@@ -1,8 +1,8 @@
-import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/features/home/domain/entities/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/book_action.dart';
+import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/book_details_section.dart';
+import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/smeller_books_section.dart';
 import 'package:bookly_app/features/home/presentation/widgets/book_rate_widget.dart';
-import 'package:bookly_app/features/home/presentation/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -10,31 +10,28 @@ class BookDetailsViewBody extends StatelessWidget {
   final BookModel book;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: .center,
-        children: [
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width * 0.17,
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Column(
+              crossAxisAlignment: .center,
+              children: [
+                BookDetailsSection(book: book),
+                const SizedBox(height: 8),
+                const BookRateWidget(),
+                const SizedBox(height: 40),
+                const BookAction(),
+                const Expanded(child: SizedBox(height: 40)),
+                SmellerBooksSection(image: book.image),
+                const SizedBox(height: 40),
+              ],
             ),
-            child: CustomBookImage(imageSource: book.image),
           ),
-          const SizedBox(height: 32),
-          Text(book.title, style: Styles.gtSectra20, textAlign: .center),
-
-          Text(
-            book.author,
-            style: Styles.montserratRegular,
-            textAlign: .center,
-          ),
-          const SizedBox(height: 8),
-          const BookRateWidget(),
-          const SizedBox(height: 40),
-          const BookAction(),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
