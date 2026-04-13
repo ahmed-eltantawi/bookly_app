@@ -14,16 +14,16 @@ abstract class Styles {
   );
   static const TextStyle montserratMedium = TextStyle(
     fontSize: 16,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     fontFamily: FontAssets.montserrat,
   );
   static const TextStyle montserratRegular = TextStyle(
-    fontSize: 14,
+    fontSize: 20,
     fontWeight: FontWeight.normal,
     fontFamily: FontAssets.montserrat,
   );
   static const TextStyle gtSectra20 = TextStyle(
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: FontWeight.w600,
     fontFamily: FontAssets.gtSectra,
   );

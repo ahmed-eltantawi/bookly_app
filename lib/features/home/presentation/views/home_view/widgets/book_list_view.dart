@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/images_assets.dart';
-import 'package:bookly_app/features/home/presentation/views/home_view/widgets/custom_book_image.dart';
+import 'package:bookly_app/features/home/presentation/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 class BookListView extends StatelessWidget {

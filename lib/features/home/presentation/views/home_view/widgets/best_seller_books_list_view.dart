@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/utils/images_assets.dart';
+import 'package:bookly_app/features/home/domain/entities/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
@@ -10,11 +12,14 @@ class BestSellerBooksListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 5,
       itemBuilder: (context, index) {
-        return const Padding(
+        return Padding(
           padding: .only(bottom: 20),
           child: BestSellerListViewItem(
-            bookName: "Harry Potter and the Goblet of Fire",
-            writer: "J.K. Rowling",
+            book: BookModel(
+              image: Assets.book1,
+              title: "Harry Potter and the Goblet of Fire",
+              author: "J.K. Rowling",
+            ),
           ),
         );
       },
