@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BookDetailsViewAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -10,7 +11,12 @@ class BookDetailsViewAppBar extends StatelessWidget
     return AppBar(
       backgroundColor: kPrimaryColor,
       automaticallyImplyLeading: false,
-      leading: IconButton(onPressed: () {}, icon: Icon(Icons.close)),
+      leading: IconButton(
+        onPressed: () {
+          GoRouter.of(context).pop();
+        },
+        icon: Icon(Icons.close),
+      ),
       actions: [
         IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined)),
       ],
