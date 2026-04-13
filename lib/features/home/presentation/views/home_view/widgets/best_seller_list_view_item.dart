@@ -1,6 +1,5 @@
 import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
-import 'package:bookly_app/core/utils/images_assets.dart';
 import 'package:bookly_app/features/home/domain/entities/book_model.dart';
 import 'package:bookly_app/features/home/presentation/widgets/book_rate_widget.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_book_image.dart';

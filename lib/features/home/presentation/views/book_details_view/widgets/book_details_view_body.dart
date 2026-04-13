@@ -1,5 +1,6 @@
 import 'package:bookly_app/core/utils/app_styles.dart';
 import 'package:bookly_app/features/home/domain/entities/book_model.dart';
+import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/book_action.dart';
 import 'package:bookly_app/features/home/presentation/widgets/book_rate_widget.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
             child: CustomBookImage(imageSource: book.image),
           ),
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           Text(book.title, style: Styles.gtSectra20, textAlign: .center),
 
           Text(
@@ -28,8 +29,10 @@ class BookDetailsViewBody extends StatelessWidget {
             style: Styles.montserratRegular,
             textAlign: .center,
           ),
-          SizedBox(height: 8),
-          BookRateWidget(),
+          const SizedBox(height: 8),
+          const BookRateWidget(),
+          const SizedBox(height: 40),
+          const BookAction(),
         ],
       ),
     );
