@@ -5,26 +5,26 @@ abstract class Styles {
   static const TextStyle montserratSemibold = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w600,
-    fontFamily: FontAssets.montserratSemiBold,
+    fontFamily: FontAssets.montserrat,
   );
   static const TextStyle montserratBold = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.w700,
-    fontFamily: FontAssets.montserratSemiBold,
+    fontWeight: FontWeight.w800,
+    fontFamily: FontAssets.montserrat,
   );
   static const TextStyle montserratMedium = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    fontFamily: FontAssets.montserratRegular,
+    fontFamily: FontAssets.montserrat,
   );
   static const TextStyle montserratRegular = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.normal,
-    fontFamily: FontAssets.montserratRegular,
+    fontFamily: FontAssets.montserrat,
   );
-  static const TextStyle libre20 = TextStyle(
+  static const TextStyle gtSectra20 = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.normal,
-    fontFamily: FontAssets.libreRegular,
+    fontWeight: FontWeight.w600,
+    fontFamily: FontAssets.gtSectra,
   );
 }
