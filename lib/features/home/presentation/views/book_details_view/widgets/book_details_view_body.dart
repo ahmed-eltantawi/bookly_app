@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/domain/entities/book_model.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entitiy.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/book_action.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/book_details_section.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view/widgets/smeller_books_section.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key, required this.book});
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -21,9 +21,9 @@ class BookDetailsViewBody extends StatelessWidget {
               children: [
                 BookDetailsSection(book: book),
                 const SizedBox(height: 8),
-                const BookRateWidget(),
+                BookRateWidget(rate: book.rate),
                 const SizedBox(height: 40),
-                const BookAction(),
+                BookAction(price: book.price),
                 const Expanded(child: SizedBox(height: 40)),
                 SmellerBooksSection(image: book.image),
                 const SizedBox(height: 40),

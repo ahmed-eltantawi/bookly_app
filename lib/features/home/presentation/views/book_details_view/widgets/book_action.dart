@@ -3,8 +3,8 @@ import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class BookAction extends StatelessWidget {
-  const BookAction({super.key});
-
+  const BookAction({super.key, required this.price});
+  final num price;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +17,7 @@ class BookAction extends StatelessWidget {
               color: Colors.white,
               onTap: () {},
               textWidget: Text(
-                "19.99 €",
+                "$price €",
                 style: Styles.montserratBold.copyWith(
                   fontSize: 18,
                   color: Colors.black,

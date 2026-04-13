@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/domain/entities/book_model.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entitiy.dart';
 import 'package:bookly_app/features/home/presentation/views/book_details_view/book_details_view.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view/home_view.dart';
 import 'package:bookly_app/features/search_book/presentation/views/search_book_view.dart';
@@ -21,7 +21,7 @@ abstract class AppRouters {
       GoRoute(
         path: kBookDetailsView,
         builder: (context, state) {
-          final book = state.extra as BookModel;
+          final book = state.extra as BookEntity;
           return BookDetailsView(book: book);
         },
       ),

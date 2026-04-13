@@ -1,6 +1,6 @@
 import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:bookly_app/core/utils/app_styles.dart';
-import 'package:bookly_app/features/home/domain/entities/book_model.dart';
+import 'package:bookly_app/features/home/domain/entities/book_entitiy.dart';
 import 'package:bookly_app/features/home/presentation/widgets/book_rate_widget.dart';
 import 'package:bookly_app/features/home/presentation/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key, required this.book});
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -41,9 +41,9 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Text("19.99 €", style: Styles.montserratBold),
+                    Text("${book.price} €", style: Styles.montserratBold),
                     const Spacer(),
-                    BookRateWidget(),
+                    BookRateWidget(rate: book.rate),
                   ],
                 ),
               ],
