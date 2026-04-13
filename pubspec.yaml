@@ -68,6 +68,9 @@ flutter:
         - asset: assets/fonts/Montserrat-Regular.ttf
         - asset: assets/fonts/Montserrat-SemiBold.ttf
           weight: 600
+    - family: Libre
+      fonts:
+        - asset: assets/fonts/LibreBaskerville-Regular.ttf
     # - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

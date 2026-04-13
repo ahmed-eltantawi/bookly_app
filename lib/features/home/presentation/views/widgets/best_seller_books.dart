@@ -11,7 +11,12 @@ class BestSellerBooks extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 26),
       child: Column(
         children: [
-          Text("Best Seller", style: AppStyle.mediumTitle),
+          Align(
+            alignment: Alignment.centerLeft,
+
+            child: Text("Best Seller", style: Styles.montserratSemibold),
+          ),
+          SizedBox(height: 16),
           BestSellerListViewItem(),
         ],
       ),
