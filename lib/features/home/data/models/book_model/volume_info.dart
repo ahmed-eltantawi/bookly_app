@@ -1,4 +1,5 @@
 import 'image_links.dart';
+import 'industry_identifier.dart';
 import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
@@ -8,10 +9,13 @@ class VolumeInfo {
   String? publisher;
   String? publishedDate;
   String? description;
+  List<IndustryIdentifier>? industryIdentifiers;
   ReadingModes? readingModes;
   num? pageCount;
   String? printType;
   List<String>? categories;
+  num? averageRating;
+  num? ratingsCount;
   String? maturityRating;
   bool? allowAnonLogging;
   String? contentVersion;
@@ -28,10 +32,13 @@ class VolumeInfo {
     this.publisher,
     this.publishedDate,
     this.description,
+    this.industryIdentifiers,
     this.readingModes,
     this.pageCount,
     this.printType,
     this.categories,
+    this.averageRating,
+    this.ratingsCount,
     this.maturityRating,
     this.allowAnonLogging,
     this.contentVersion,
@@ -49,12 +56,17 @@ class VolumeInfo {
     publisher: json['publisher'] as String?,
     publishedDate: json['publishedDate'] as String?,
     description: json['description'] as String?,
+    industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
+        ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
+        .toList(),
     readingModes: json['readingModes'] == null
         ? null
         : ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
     pageCount: json['pageCount'] as num?,
     printType: json['printType'] as String?,
     categories: json['categories'] as List<String>?,
+    averageRating: json['averageRating'] as num?,
+    ratingsCount: json['ratingsCount'] as num?,
     maturityRating: json['maturityRating'] as String?,
     allowAnonLogging: json['allowAnonLogging'] as bool?,
     contentVersion: json['contentVersion'] as String?,
@@ -78,10 +90,13 @@ class VolumeInfo {
     'publisher': publisher,
     'publishedDate': publishedDate,
     'description': description,
+    'industryIdentifiers': industryIdentifiers?.map((e) => e.toJson()).toList(),
     'readingModes': readingModes?.toJson(),
     'pageCount': pageCount,
     'printType': printType,
     'categories': categories,
+    'averageRating': averageRating,
+    'ratingsCount': ratingsCount,
     'maturityRating': maturityRating,
     'allowAnonLogging': allowAnonLogging,
     'contentVersion': contentVersion,

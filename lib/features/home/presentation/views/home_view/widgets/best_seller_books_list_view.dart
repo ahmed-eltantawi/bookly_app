@@ -16,6 +16,7 @@ class BestSellerBooksListView extends StatelessWidget {
           padding: .only(bottom: 20),
           child: BestSellerListViewItem(
             book: BookEntity(
+              bookId: "1",
               price: 19.99,
               rate: 4.8,
               image: Assets.book1,
