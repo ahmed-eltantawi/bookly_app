@@ -26,6 +26,7 @@ class HomeRemoteDataSourceImpletion extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewsBooks() async {
     var data = await apiServices.get(endPoint: "volumes?q=news");
     List<BookEntity> books = getBooksList(data);
+    saveBooksData(books: books, boxName: kNewsBox);
     return books;
   }
 
