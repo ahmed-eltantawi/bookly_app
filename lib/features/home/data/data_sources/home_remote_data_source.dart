@@ -8,7 +8,6 @@ abstract class HomeRemoteDataSource {
 }
 
 class HomeRemoteDataSourceImpletion extends HomeRemoteDataSource {
-  @override
   final ApiServices apiServices;
 
   HomeRemoteDataSourceImpletion({required this.apiServices});
