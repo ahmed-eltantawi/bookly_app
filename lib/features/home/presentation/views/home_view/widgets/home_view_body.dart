@@ -1,5 +1,5 @@
 import 'package:bookly_app/features/home/presentation/views/home_view/widgets/best_seller_books.dart';
-import 'package:bookly_app/features/home/presentation/views/home_view/widgets/book_list_view.dart';
+import 'package:bookly_app/features/home/presentation/views/home_view/widgets/news_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -12,7 +12,7 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: SizedBox(
             height: MediaQuery.sizeOf(context).height * .3,
-            child: const BookListView(),
+            child: const NewsBooksListView(),
           ),
         ),
         const SliverToBoxAdapter(child: SizedBox(height: 54)),
