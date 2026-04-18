@@ -18,8 +18,7 @@ class HomeRemoteDataSourceImpletion extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchBestSellerBooks() async {
     var data = await apiServices.get(endPoint: "volumes?q=programming");
     List<BookEntity> books = getBooksList(data);
-    var box = Hive.box(kFeatureBox);
-    box.addAll(books);
+    saveBooksData(books: books, boxName: kFeatureBox);
     return books;
   }
 
@@ -27,7 +26,6 @@ class HomeRemoteDataSourceImpletion extends HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewsBooks() async {
     var data = await apiServices.get(endPoint: "volumes?q=news");
     List<BookEntity> books = getBooksList(data);
-    saveBooksData(books: books, boxName: kFeatureBox);
     return books;
   }
 
