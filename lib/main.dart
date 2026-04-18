@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
-  runApp(const BooklyApp());
-  Hive.initFlutter();
+  await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox(kBestsellerBox);
   await Hive.openBox(kNewsBox);
+  runApp(const BooklyApp());
 }
 
 class BooklyApp extends StatelessWidget {
