@@ -4,10 +4,10 @@ import 'package:bookly_app/features/home/domain/entities/book_entitiy.dart';
 import 'package:bookly_app/features/home/domain/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class FetchNewsBooks extends UseCase<List<BookEntity>, void> {
+class FetchNewsBooksUseCase extends UseCase<List<BookEntity>, void> {
   final HomeRepo homeRepo;
 
-  FetchNewsBooks({required this.homeRepo});
+  FetchNewsBooksUseCase({required this.homeRepo});
 
   @override
   Future<Either<Failure, List<BookEntity>>> call([void param]) async {
